@@ -58,10 +58,10 @@ How-to task (Thursday): the same three lines with `docs/blog-routine/how-to.md` 
      "excerpt": "...",
      "categories": [8],
      "tags": [92, 94],
-     "meta": { "ta_seo_title": "...", "ta_seo_description": "...", "ta_ai_image_alt": "..." }
+     "meta": { "ta_seo_title": "...", "ta_seo_description": "...", "ta_ai_image_alt": "...", "ta_social_caption": "..." }
    }
    ```
-   Use `[107]` for the how-to run. `tags` holds 2 to 4 ids from the brief's tags table (the ids above are an example), and `ta_ai_image_alt` is the alt text from the image brief, 125 characters or fewer. A 201 response is success: note `id`, build the edit link `https://techarena.com.au/wp-admin/post.php?post=<id>&action=edit`, and go to step 10.
+   Use `[107]` for the how-to run. `tags` holds 2 to 4 ids from the brief's tags table (the ids above are an example), `ta_ai_image_alt` is the alt text from the image brief, 125 characters or fewer, and `ta_social_caption` is the social caption (brief §9): 1 to 300 characters, plain text, no link, at most 3 hashtags. Send one caption only; the social feed adds the link or the "Read more" line for each network. Editor notes stay in the post body as before (the plugin moves them to protected meta when it publishes). A 201 response is success: note `id`, build the edit link `https://techarena.com.au/wp-admin/post.php?post=<id>&action=edit`, and go to step 10.
 
 9. **Retry rule (B1).** After any non-2xx response to the create POST, or no response (timeout, dropped connection), do not POST a new post. A 400 on `meta` arrives after the post row was inserted, so a draft may already exist. Instead:
    1. Re-run the weekly-slot query from step 2.
