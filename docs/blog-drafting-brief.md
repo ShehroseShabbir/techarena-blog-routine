@@ -15,7 +15,26 @@ Two posts a week, both saved as drafts for the Director to review and publish:
 | Monday | News article: one current tech, AI, Microsoft 365 or security story, framed as "what it means for your business" | News & Events (slug `news-events`, id 8) |
 | Thursday | How-to guide: one common or trending IT problem and its fix | User Guides (slug `user-guides`, id 107) |
 
-Use exactly one category per post. Add no tags (tags are noindexed and left out of the sitemap). Never use Quick Tips, Success Stories or Uncategorized.
+Use exactly one category per post. Add 2 to 4 tags, using ids only from the table below. Never use Quick Tips, Success Stories or Uncategorized.
+
+### Tags (DR-M2-1-W7-7)
+
+Pick 2 to 4 tags that name the post's plain topic, and send them as ids in `tags`. Use only the ids in this table; never create a tag and never use a tag that is not listed. If no row fits, send fewer tags.
+
+| id | slug | use for |
+|---|---|---|
+| 92 | ai | AI tools, Copilot, AI risks and uses at work |
+| 93 | chatgpt | Only when the post is about ChatGPT itself |
+| 94 | cyber-attacks | Incidents in the news: breaches, ransomware, attack campaigns |
+| 95 | identity-theft | Stolen identities, account takeover, scams |
+| 19 | managed-services | Managed IT, monitoring, outsourcing IT |
+| 104 | email-support | Email setup, delivery and mailbox problems |
+| 102 | computer-support | General PC problems and fixes |
+| 103 | laptop-support | Laptop issues and fixes |
+| 105 | office365 | Microsoft 365 and Office apps |
+| 106 | windows-migration | Windows upgrades and migrations |
+
+SEO note: tags are noindexed and left out of the sitemap (`seo.php`), so they carry no SEO weight. They are for readers and related posts.
 
 ## 2. Voice
 
@@ -154,7 +173,7 @@ The post ends with one core group block. Its first line is a heading with exactl
 
 That heading matches the site's placeholder guard, so the post can't be published from the block editor until the Director deletes the block. Inside the block, use plain paragraphs and lists only:
 
-1. **Image brief.** Subject, composition (landscape), mood, and alt text (one sentence, about 125 characters or fewer). Source: "free Gemini web app or a real photo". Never use a paid image generator. No people presented as Tech Arena staff, no other companies' logos and no text in the image.
+1. **Image brief.** Subject, composition (landscape), mood, and alt text (one sentence, about 125 characters or fewer). Also send the alt text as `meta: { "ta_ai_image_alt": "<alt text from the image brief, 125 characters or fewer>" }` in the create POST; the plugin uses it as the alt text of the cover image. A branded cover image is generated automatically, so the brief is only for the optional photo swap. Source: "free Gemini web app or a real photo". Never use a paid image generator. No people presented as Tech Arena staff, no other companies' logos and no text in the image.
 2. **Screenshots brief** (how-to only). For each screenshot: which step it shows, which screen to capture, and what to blur (names, email addresses, tenant names, licence keys, any personal data).
 3. **Duplicate-check result.** The closest existing posts found and why this topic is different (the check itself is described in `common.md`).
 4. **Run date.** The date of this run, in Melbourne time.
@@ -184,7 +203,7 @@ Run through this list before the draft is saved. If any item fails, fix it. If y
 - [ ] The SEO title is 60 characters or fewer and ends with " | Tech Arena", counted with code.
 - [ ] The meta description is 155 characters or fewer, counted with code.
 - [ ] The excerpt reads well on its own.
-- [ ] The category is News & Events (news) or User Guides (how-to). No tags.
+- [ ] The category is News & Events (news) or User Guides (how-to). 2 to 4 tags, ids only from the §1 tags table.
 - [ ] At least two links to service pages from §6, all `https://techarena.com.au/...` with a trailing slash.
 - [ ] Sources: primary first, enough of them (§7), each opened and date-checked, linked in the text and in the Sources list.
 - [ ] No copied text. At most one short, attributed quote.
