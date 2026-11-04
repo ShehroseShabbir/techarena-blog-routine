@@ -179,7 +179,21 @@ That heading matches the site's placeholder guard, so the post can't be publishe
 4. **Run date.** The date of this run, in Melbourne time.
 5. **Anything to verify.** Any fact you could only find in one source, or anything the Director should check before publishing. Write it as a plain sentence.
 
+Editor notes stay in the post body. When a post is auto-published, the plugin moves the notes text into protected post meta and drops the block from the public page, so readers never see it. Write the notes as before.
+
 Use square brackets nowhere else in the post. Text in square brackets that contains "Director", "needed" or "to confirm" also triggers the publish guard. Never use `#` as a link address.
+
+### Social caption
+
+Also send `meta: { "ta_social_caption": "<caption>" }` in the create POST. It is the text shared on LinkedIn, Facebook and Instagram after the post is published. Write one caption only. The site adds the ending for each network: the link to the post for LinkedIn and Facebook, and "Read more at techarena.com.au/it-blog/" for Instagram. The caption must be:
+
+- 1 to 300 characters, counted with code.
+- Plain text in the voice of §2: one idea that makes a reader want the full post.
+- Free of any link or web address, and of square brackets, `<`, `>` and HTML entities (such as `&amp;`).
+- Free of bare domains or dotted names such as `example.com`. Write "ASP .NET"; "ASP.NET" is Held.
+- One line: line breaks are flattened to spaces.
+- Limited to 3 hashtags at most.
+- Limited to claims that §3 allows.
 
 ## 10. Safety rules
 
@@ -203,6 +217,7 @@ Run through this list before the draft is saved. If any item fails, fix it. If y
 - [ ] The SEO title is 60 characters or fewer and ends with " | Tech Arena", counted with code.
 - [ ] The meta description is 155 characters or fewer, counted with code.
 - [ ] The excerpt reads well on its own.
+- [ ] `ta_social_caption` is sent in `meta`: 300 characters or fewer counted with code, plain text, no link, at most 3 hashtags.
 - [ ] The category is News & Events (news) or User Guides (how-to). 2 to 4 tags, ids only from the §1 tags table.
 - [ ] At least two links to service pages from §6, all `https://techarena.com.au/...` with a trailing slash.
 - [ ] Sources: primary first, enough of them (§7), each opened and date-checked, linked in the text and in the Sources list.
